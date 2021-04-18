@@ -1,0 +1,38 @@
+.animateit{
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+    animation:  slide 1.2s cubic-bezier(0.01, 0.41, 0.57, 0.99) forwards;
+}
+
+@keyframes slide{
+    from{
+        transform: translate(-100%);
+    }
+    to{
+        transform: translate(0);
+        @media(min-width:1300px){
+            transform: translate(10%);
+        }
+    }
+}
+
+@keyframes slideLeft{
+    from{
+        transform: translate(-100%);
+
+    }
+    to{
+        transform: translate(10%);
+
+    }
+}
+@keyframes slideRight{
+    from{
+        transform: translate(100%);
+
+    }
+    to{
+        transform: translate(-10%);
+
+    }
+}

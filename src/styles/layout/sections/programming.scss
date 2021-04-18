@@ -1,0 +1,32 @@
+@use '../../base/' as b;
+@use '../../mixin/' as m;
+
+    .side-image-information{
+        background-color: white;
+        .wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @media(min-width:1300px){
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+          .description{
+              @include m.description($margin:0, $translateX:0);
+          }
+        }
+    }
+    .side-image{
+        opacity: 0;
+        object-fit: cover;
+         width: 100%;
+         height: auto;
+         @media(min-width:1300px){
+         width: auto;
+
+         }
+        &.fade-in{
+            @include m.fade-in(1.2s);
+       }
+    }

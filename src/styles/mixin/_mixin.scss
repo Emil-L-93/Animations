@@ -1,0 +1,23 @@
+
+@mixin character($width:null){
+    width: $width;
+}
+
+
+@mixin description($color:black,$margin:0, $translateX:0%) {
+        width:min(84vw,600px);
+        margin:$margin;
+        opacity: 0;
+        color:$color;
+        @media(min-width:1300px){
+        transform: translatex($translateX);
+        }
+    &.fade-in{
+        @include fade-in(1.2s);
+    }
+}
+@mixin fade-in($duration:1.2s){
+    opacity: 1;
+    transition: opacity $duration linear;
+
+}
