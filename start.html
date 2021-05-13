@@ -1,67 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" type="text/css" href="./Assets/dist/main.css" >
-   <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet"></head>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-   <body>
+    <link rel="stylesheet" type="text/css" href="./Assets/dist/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+</head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<body>
     <div class="main-navigation-wrapper">
-    <div class="logo">
-        <img src="">
+        <div class="logo">
+            <img src="">
+        </div>
+        <div class="main-navigation">
+            <ul class="top-navigation">
+                <li class="navigation--link"><a href="#design" class="design">Design</a></li>
+                <li class="navigation--link">Programming
+                    <ul class="sub--navigation">
+                        <a href="#instagram" class="sub--link">
+                            <li>Instagram</li>
+                        </a>
+                        <a href="#imageGallery" class="sub--link">
+                            <li>Image Gallery</li>
+                        </a>
+                    </ul>
+                </li>
+                <li class="navigation--link">Education</li>
+                <li class="navigation--link">About</li>
+                <li class="navigation--link">Contact</li>
+            </ul>
+        </div>
     </div>
-    <div class="main-navigation">
-        <ul class="top-navigation">
-            <li><a href="#design" class="design">Design</a></li>
-            <li>Programming</li>
-            <li>Education</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
-    </div>
-    </div>
-    <header class="main-focus-header" style="background-image: url('https://picsum.photos/seed/picsum/1920/937')">
+    <header id="home" class="main-focus-header home"
+        style="background-image: url('https://picsum.photos/seed/picsum/1920/937')">
         <!-- <img src="https://picsum.photos/seed/picsum/1920/937" /> -->
         <div class="main-focus-header--container">
-            
+
             <h1>Designing the future</h1>
-           <div class="seperator"></div>
+            <div class="seperator"></div>
             <h3>Future is the designer</h3>
         </div>
     </header>
     <main>
+        <div class="section--navigation-dots">
+            <ul class="navigation--dots">
+                <!-- <a href="#home" id="home-dot" class="navigation--dot home-dot"><li></li></a> -->
+                <!-- <a href="#design" class="navigation--dot"><li class="design1"></li></a>
+                <a href="#programming" class="navigation--dot"><li class="programming1"></li></a>
+                <a href="#education" class="navigation--dot"><li class="education1"></li></a>
+                <a href="#about" class="navigation--dot"><li class="about1"></li></a>
+                <a href="#instagram" class="navigation--dot"><li class="instagram1"></li></a>
+                <a href="#imageGallery" class="navigation--dot"><li class="imageGallery1"></li></a>
+                <a href="#footer" class="navigation--dot"><li class="footer1"></li></a> -->
+            </ul>
+        </div>
         <div class="section-wrapper">
-            <section id="design">
+            <section id="design" class="design">
                 <div class="slide-animation-wrapper">
                     <div class="content-container">
                         <div>
-                        <h3>Animations are cool</h3>
-                        <p>This is a slide animation, slide animations are  very cool</p>
-                    </div>
+                            <h3>Animations are cool</h3>
+                            <p>This is a slide animation, slide animations are very cool</p>
+                        </div>
                     </div>
                     <div class="description">
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker including
+                            versions of Lorem Ipsum.
                         </p>
-                    </div>
                     </div>
                 </div>
             </section>
             <section id="programming" class="side-image-information">
                 <div class="wrapper">
-                    <div class="description-nonOpacity">
+                    <div class="description">
                         <h3>Image heading</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker including
+                            versions of Lorem Ipsum.</p>
                     </div>
-                        <img class="side-image" src="https://picsum.photos/id/1015/1150/800" >
-                    
+                    <img class="side-image" src="https://picsum.photos/id/1015/1150/800">
+
                 </div>
             </section>
-            <section id="education" class="education" style="background-image: url('https://picsum.photos/id/1067/1920/1297.jpg')">
-               
+            <section id="education" class="education"
+                style="background-image: url('https://picsum.photos/id/1067/1920/1297.jpg')">
+
                 <div class="education--container">
                     <h2>We educate the new future</h2>
                     <div class="seperator"></div>
@@ -72,47 +109,151 @@
                 <div>
                     <h3>About our organization</h3>
                     <ul>
-                        <li class="about-li ">
-                            <h4>About us one</h4> 
+                        <li class="about-li" style="--order: 1">
+                            <div>
+                                <h4>About us one</h4>
+                            </div>
+                            <div class="about-us-card ">Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum has been the industry's
+                                standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a
+                                type specimen book. It has survived not only</div>
                         </li>
-                        <!-- <div class="about-us-card ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only</div> -->
-                        <li class="about-li ">About us two</li>
-                        <li class="about-li ">About us three</li>
-                        <li class="about-li ">About us four</li>
-                        <li class="about-li ">About us five</li>
+
+                        <li class="about-li" style="--order: 2">About us two</li>
+                        <li class="about-li" style="--order: 3">About us three</li>
+                        <li class="about-li" style="--order: 4">About us four</li>
+                        <li class="about-li" style="--order: 5">
+                            <h4>About us five </h4>
+                            <div class="about-us-card ">Lorem Ipsum is simply dummy text of the printing
+                                and typesetting industry. Lorem Ipsum has been the industry's
+                                standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a
+                                type specimen book. It has survived not only</div>
+                        </li>
                     </ul>
                 </div>
             </section>
+            <section id="instagram" class="cards">
+                <div class="card-wrapper">
+                    <div class="card"><img src="https://picsum.photos/id/1050/400/400" alt="card-image">
+                        <div class="card--text">
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div class="card"><img src="https://picsum.photos/id/1041/400/400" alt="card-image">
+                        <div class="card--text">
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div class="card"><img src="https://picsum.photos/id/16/400/400" alt="card-image">
+                        <div class="card--text">
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div class="cardtwo"><img src="https://picsum.photos/id/16/400/400" alt="card-image">
+                        <div class="card--text">
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div class="cardtwo"><img src="https://picsum.photos/id/16/400/400" alt="card-image">
+                        <div class="card--text">
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div class="cardtwo"><img src="https://picsum.photos/id/16/400/400" alt="card-image">
+                        <div class="card--text">
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div class="cardthree">
+                        <img class="main-card-image" src="https://picsum.photos/id/1050/400/400" alt="card-image">
+                        <div class="card--box">
+                            <a href="#">
+                                <p>Follow us on instagram</p>
+                                <img src="./Assets/dist/noun_instagram_3350460.3e65e6b0.svg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cardthree">
+                        <img class="main-card-image" src="https://picsum.photos/id/1050/400/400" alt="card-image">
+                        <div class="card--box">
+                            <a href="#">
+                                <p>Follow us on instagram</p>
+                                <img src="./Assets/dist/noun_instagram_3350460.3e65e6b0.svg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cardthree">
+                        <img class="main-card-image" src="https://picsum.photos/id/1050/400/400" alt="card-image">
+                        <div class="card--box">
+                            <a href="#">
+                                <p>Follow us on instagram</p>
+                                <img src="./Assets/dist/noun_instagram_3350460.3e65e6b0.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="imageGallery" class="leaningCards">
+                <div class="leaningCards--wrapper">
+                    <div class="card--column">
+                        <img class="card--image" src="https://picsum.photos/id/1041/300/200">
+                        <img class="card--image" src="https://picsum.photos/id/1041/300/200">
+                        <img class="card--image" src="https://picsum.photos/id/1041/300/200">
+                        <img class="card--image" src="https://picsum.photos/id/1041/300/200">
+
+                    </div>
+                    <div class="card--column">
+                        <img class="card--image" src="https://picsum.photos/id/1041/300/200">
+                        <img class="card--image" src="https://picsum.photos/id/1041/300/200">
+                        <img class="card--image" src="https://picsum.photos/id/1041/300/200">
+                        <img class="card--image" src="https://picsum.photos/id/1041/300/200">
+
+                    </div>
+                </div>
+            </section>
         </div>
-        
     </main>
     <footer id="footer" class="footer">
         <div class="footer-content-wrapper">
             <div class="description">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only</p>
             </div>
             <div class="contact">
                 <h3>Contact Us</h3>
                 <p>We help you design the future.</p>
                 <div class="form-wrapper">
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Message">
-            </div>
+                    <input type="text" placeholder="Email">
+                    <input type="text" placeholder="Message">
+                </div>
             </div>
             <div class="social-media">
                 <h3>Social media</h3>
                 <ul>
                     <!-- <li><a><i class="facebook"></i></a></li> -->
-                    <li><a href="#" class="instagram"><img src="./Assets/dist/noun_instagram_3350460.3e65e6b0.svg"></a></li>
+                    <li><a href="#" class="instagram"><img src="./Assets/dist/noun_instagram_3350460.3e65e6b0.svg"></a>
+                    </li>
                     <li><a href="#" class="twitter"><img src="./Assets/dist/noun_Twitter_101100.7bd0b2fd.svg"></a></li>
 
                 </ul>
             </div>
-           
+        </div>
+        <div class="footer--animation">
+            <ul class="footer--list">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         </div>
     </footer>
     <script type="text/javascript" src="./Assets/dist/main.js"></script>
 </body>
+
 </html>
 <!-- 
 saved images

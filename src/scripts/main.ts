@@ -1,91 +1,112 @@
-import '../styles/main.scss' 
-import '@fortawesome/fontawesome-free'
+import '../styles/main.scss'
 const container = document.querySelector('.content-container');
-const textContainer = document.querySelector('.description');
 const headingContainer = document.querySelector('.main-focus-header--container');
 const desigElement = document.querySelector('.design');
 const scrollTo = document.querySelector('#design');
+const arr: string[] = Array<string>("", "");
+const arr2: string[] = ["ett", "wtt"];
+const arr3 = new Array(30);
 // let scrollValue = 0;
+for (let item in arr2) {
+    console.log(item);
+}
+var nuarr = Array<Number>();
+for (var i = 1; i < arr3.length; i++) {
+    let random = Math.floor(Math.random() * i)
+    nuarr.push(random);
+
+    // console.log()
+}
+
+// console.log(nuarr.filter((v,i,a) => a.indexOf(v) === i))
 let scrollValue;
-const img = document.querySelector('#programming img');
-const descrip = document.querySelector('.description-nonOpacity');
-let ListOfElements = document.querySelectorAll(".content-container, #programming img, .description,.description-nonOpacity, .education--container") 
+let ListOfElements = document.querySelectorAll(".content-container, #programming img, .description,.description-nonOpacity, .education--container")
+
 window.onload = () => {
     headingContainer.classList.add('fade-in')
 }
 scrollValue = window.scrollY;
-document.addEventListener('scroll', (e) => {
-    //console.log(`%c scrollValue ${scrollValue}`,'color:red')
-    
-
-     fadeOutIn(ListOfElements)
-
-    // console.log(container.scrollHeight)
-    // console.log(window.scrollY)
-    // if(window.scrollY >= 176){
-    //     container.classList.add('animateit')
-    //     textContainer.classList.add('fade-in')
-    // }
-    // if(window.scrollY >= 600){
-    //     img.classList.add('fade-in');
-    //     descrip.classList.add('fade-in');
-    // }
-})
-// window.scroll({
-//     top:0,
-//     left:0,
-//     behavior:'smooth'
-// })
-
-desigElement.addEventListener('click', () =>{
-    scrollTo.scrollIntoView(
-        {
-            behavior:'smooth',
-            block:'end',
-            inline:'nearest'
-
-        }
-    );
-})
-
-const fadeOutIn = (fadeInElements) => {
-    //console.log()
-    fadeInElements.forEach(fadeInElements => {
-        var _this = fadeInElements as Element;
-        //console.log(`%c scrollHeight ${_this.scrollHeight}`,'color:white')
-
-        if(window.scrollY >= _this.scrollHeight){
-            _this.classList.add('fade-in')
-            _this.removeAttribute('style');
-             //console.log("Added Fade-in to Element:", _this)
-            // console.log("Element scrol height:", _this.scrollHeight)
-        }
-      else if (window.scrollY <= (_this.scrollHeight - _this.scrollHeight / 3)){
-             _this.style.opacity = '0';
-              _this.classList.remove('animateit')
-             //console.log("Removed Fade-in to Element:", _this)
-            // console.log("Element scrol height:", _this.scrollHeight)
-        }
-        if(_this.classList.contains('content-container')){
-            container.classList.add('animateit')
-        }  
-    });
-      
-       
-   
+const sections = document.querySelectorAll('section, header, footer')
+//Create observe options
+let options = {
+    root: null, // it is the viewport if null,
+    rootMargin: '10px',
+    threshold: .5 // 1 means when 100% of the of the target is visible within
+    // the element soecifield by the root option the callback is invoked
 }
+const sectionDotHolder = document.querySelector('.navigation--dots');
+//Create new instance of IntersectionObserver
+let observer = new IntersectionObserver(function (entries: IntersectionObserverEntry[], observer: IntersectionObserver) {
+    entries?.forEach(entry => {
+        let sectionDot: Element = document.querySelector(`.${entry.target.id}-dot`)
+        if (`${entry.target.id}-dot` === sectionDot.id && entry.isIntersecting) {
+            sectionDot.firstElementChild.classList.add('active')
+            entry.target.firstElementChild.classList.add('fade-in')
+            container.classList.add('animateit')
+        } else {
+            //  entry.target.firstElementChild.classList.remove('fade-in')
+            sectionDot.firstElementChild.classList.remove('active')
+        }
+
+    })
+}, options);
+//foreach section / Element we observe the element
+sections.forEach(section => {
+    let dot = ` <a href="#${section.id}" id="${section.id}-dot" class="navigation--dot ${section.id}-dot"><li></li></a>`;
+    sectionDotHolder.insertAdjacentHTML('beforeend', dot);
+    observer.observe(section)
+});
+//console.log(`%c scrollValue ${scrollValue}`,'color:red')
+
+window.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+})
 
 document.querySelector("#about h3").addEventListener('click', () => {
-    document.querySelectorAll(".about-li:nth-child(odd)").forEach( (element) => {
+    document.querySelectorAll(".about-li:nth-child(odd)").forEach((element) => {
         element.classList.add('slideitright')
     })
-    document.querySelectorAll(".about-li:nth-child(even)").forEach( (element) => {
+    document.querySelectorAll(".about-li:nth-child(even)").forEach((element) => {
         element.classList.add('slideitleft')
     })
 })
 
-    
-    var aboutusblock = document.querySelector(".about-us-card");
-    aboutusblock.addEventListener('click', (e) => {
-        aboutusblock.classList.add("slidedown");
+
+var aboutusblock = document.querySelectorAll(".about-li");
+aboutusblock.forEach((element) => {
+    element.addEventListener('click', (e) => {
+        var target = e.target as Element;
+        target?.classList.add("slidedown");
     })
+})
+
+
+//start on click full image
+
+var cardImage = document.querySelectorAll('.card--image');
+cardImage.forEach((element) => {
+    element.addEventListener('click', (e) => {
+        var target = e.target as Element;
+        target?.classList.add("rotate")
+    })
+})
+
+    // var section = document.querySelectorAll('.navigation--dot li');
+    // section.forEach((element) => {
+    //     console.log("1")
+    //     element.addEventListener('click', (e) =>{
+    //         var target = e.target as Element;
+    //         target.classList.add('active')
+    //         // target.parentNode.previousSibling.childNodes.classList.remove('active')
+    //         // var te = getSiblings(element)
+    //         // element.nextElementSibling.firstElementChild.classList.remove('active')
+    //     })
+    //     // console.log("W", element)
+    // })
+const fruits = [{"name":"banana"}, {"name":"apple"}, {"name":"orange"}, {"name":"kiwi"}];
+
+// console.log(fruits.map(fruit => fruit.toLocaleUpperCase()))
+console.log(fruits.filter(n => n.name == "banana"))
+console.log(fruits.map(f => f.name).sort())

@@ -1,24 +1,24 @@
 @use '../../base/' as b;
 @use '../../mixin/' as m;
-.education{
-    height: 1297px;
+.education {
+    min-height: clamp(100vh, 50vh, 1297px);
     background-repeat: no-repeat;
     object-fit: cover;
     background-position: center;
-    background-size: cover ;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    &--container{
+    &--container {
         width: 1350px;
         opacity: 0;
-        padding:0 20px;
+        padding: 0 20px;
         text-align: center;
-        @media(min-width:1300px){
+        @media (min-width: 1300px) {
             text-align: left;
         }
-        &.fade-in{
+        &.fade-in {
             @include m.fade-in(1.2s);
-       }
+        }
     }
 }

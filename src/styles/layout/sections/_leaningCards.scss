@@ -1,0 +1,76 @@
+@use '../../base/' as b;
+
+.leaningCards{
+    background-color:b.$color-white ;
+    overflow: hidden;
+    .leaningCards--wrapper{
+        display: flex;
+        align-items: center;
+        // justify-content: space-around;
+        position: relative;
+        grid-template-rows: repeat(auto-fill,1fr);
+        flex-direction: column;
+        @media(min-width:1200px){
+            padding: 200px 0;
+            flex-direction: row;
+
+        }
+        .card--column{
+            height: auto;
+            background-color: b.$color-white;
+            border: 5px solid white;
+            display: inherit;
+            flex-direction: column;
+            width: 100%;
+            max-width: 300px;
+            @media (min-width:1200px){
+                width: auto;
+                transform:rotate3d(0, 4, -1, 15deg) skew(-59deg, 21deg) translateX(9em)translateY(-7em);
+                box-shadow: 3rem 1rem 1.5rem rgba(0, 0, 0, 0.5);
+                margin: 0 150px;
+            }
+            .card--image{
+              
+                transform: none;
+                transition:none; 
+                overflow: hidden;
+                margin: .5rem 0;
+                @media(min-width:1200px){
+                    box-shadow: 2rem 0rem 1rem rgba(0, 0, 0, 0.2);
+                    transform: perspective(500px) translateZ(0px) ;
+                    transition: transform .2s linear, box-shadow .2s cubic-bezier(.15,-0.17,.52,.96);
+                    margin: 0;
+                    width: 250px;
+                    height: 150px;
+                }
+                &:hover{
+                //transform-style: preserve-3d;
+                transform:translateX(-50px) translateY(-40px) perspective(200px) translateZ(20px);
+                box-shadow:  2rem 1rem 1.0rem rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+    }
+}
+// .card--column:hover .card--image{ 
+
+//         //transform-style: preserve-3d;
+//         transform:translateX(-50px) translateY(-40px) perspective(200px) translateZ(20px);
+//         box-shadow:  2rem 1rem 1.0rem rgba(0, 0, 0, 0.5);
+        
+    
+// }¨
+
+.rotate{
+    animation: animateBox 2s ease-in forwards;
+}
+@keyframes animateBox{
+    from{
+        transform:rotate3d(0, 4, -1, 15deg) skew(-59deg, 21deg) translateX(9em)translateY(-7em);
+
+    }
+    to{
+        transform:rotate3d(0, 0, 0, 0deg) skew(0deg, 0deg) translateX(0em)translateY(0em);
+
+    }
+}

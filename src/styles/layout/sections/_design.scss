@@ -1,65 +1,68 @@
 @use '../../base/' as b;
 @use '../../mixin/' as m;
-.slide-animation-wrapper{
+.slide-animation-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 0;
-    @media (min-width:1300px){
+    
+    @media (min-width: 1300px) {
         color: b.$color-white;
         flex-direction: row;
         justify-content: center;
-    }
-    .description{
-        @include m.description($color:b.$color-white, $margin:0);
-        @media(min-width:1300px){
+        padding: 50px 50px;
+     }
+    .description {
+        @include m.description($color: b.$color-white, $margin: 0);
+        @media (min-width: 1300px) {
+            margin-left: 100px;
+        }
+        @media (min-width: 1600px) {
             margin-left: 200px;
         }
+       
+    }
+    &.fade-in > * {
+        @include m.fade-in(1.2s);
     }
 }
-.content-container{
+.content-container {
     position: relative;
-    width:min(100%,455px);
+    width: min(100%, 455px);
     transform: translate(0);
-    background-color:b.$color-darkblue;
-    border:20px solid b.$color-white;
-    padding:40px 30px;
-    clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+    background-color: b.$color-darkblue;
+    padding: 40px 30px;
     opacity: 0;
-    color:b.$color-white;
+    color: b.$color-white;
     max-height: 216px;
-
-    &.fade-in{
-         @include m.fade-in(1.2s);
-    }
-    div{
-        @include m.character($width:35ch);
-        @media (min-width:700px){
-        @include m.character($width:36ch)
-
+    @media (min-width:962px) {
+    border: 20px solid b.$color-white;
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 0;
+        border-right: 30px solid b.$color-white;
+        right: 11%;
+        z-index: 222;
+        transform: skew(328deg);
+        @media (min-width: 700px) {
+            right: 11%;
+            transform: skew(320deg);
         }
     }
-    @media (min-width:700px){
-        /* transform: skew(10deg); */
+    }
+    div {
+        // @include m.character($width: 35ch);
+        @media (min-width: 700px) {
+            @include m.character($width: 36ch);
+        }
+    }
+    @media (min-width: 700px) {
         transform: translate(-100%);
-        width:min(600px,600px);
+        width: min(600px, 600px);
     }
-  &::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 0;
-    border-right: 30px solid b.$color-white;
-    right: 11%;
-    z-index: 222;
-    transform: skew(328deg);
-    @media(min-width:700px){
-        right: 11%;
-        transform: skew(320deg);
-
-    }
-}
 
 }

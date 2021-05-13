@@ -1,30 +1,28 @@
 @use '../../base/' as b;
 @use '../../mixin/' as m;
-section{
+section {
     width: 100%;
-    padding:30px 20px;
-    background-color:b.$color-darkblue;
-
+    padding: 30px 20px;
+    background-color: b.$color-darkblue;
 }
-.section-wrapper{
-    background: rgb(25,53,90);
-    background: linear-gradient(
-    0deg
-    rgba(25,53,90,1) 0%,
-    rgba(25,53,90,0.9416141456582633)
-      107%);
+.section-wrapper {
+    background: rgb(25, 53, 90);
+    background: linear-gradient(0deg rgba(25, 53, 90, 1) 0%, rgba(25, 53, 90, 0.9416141456582633) 107%);
+    section {
+        &.fade-in * div {
+            @include m.fade-in(1.2s);
+        }
+    }
 }
-.seperator{
-    border-bottom:0.4em solid #e6c2bb;
-    width: 10%; 
+.seperator {
+    border-bottom: 0.4em solid #e6c2bb;
+    width: 10%;
     margin: 15px 0;
 }
 
-
-.description-nonOpacity{
+.description-nonOpacity {
     @extend %description-extention;
-
-        &.fade-in{
-            @include m.fade-in(1.2s);
-       }
+    &.fade-in {
+        @include m.fade-in(1.2s);
     }
+}
